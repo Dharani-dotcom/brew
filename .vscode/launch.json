@@ -2,70 +2,35 @@
   "version": "0.2.0",
   "configurations": [
     {
-      // Launch Homebrew command with debugger
       "type": "rdbg",
       "name": "Debug Homebrew Command",
       "request": "launch",
-
-      // Working directory
       "cwd": "${workspaceFolder}",
-
-      // Ruby debugger path
       "rdbgPath": "${workspaceFolder}/Library/Homebrew/shims/gems/rdbg",
-
-      // Command to execute
       "command": "brew",
-
-      // Script or Ruby file
       "script": "debugger",
-
-      // Optional arguments
       "args": [
         "--",
         "${fileBasenameNoExtension}"
       ],
-
-      // Ask for runtime parameters
       "askParameters": true,
-
-      // Use Bundler environment
-      "useBundler": true,
-
-      // Show debugger logs
       "showDebuggerOutput": true,
-
-      // Environment variables
       "env": {
         "HOMEBREW_DEVELOPER": "1",
         "HOMEBREW_NO_AUTO_UPDATE": "1",
         "TMPDIR": "/private/tmp"
-      },
-
-      // Optional env file
-      "envFile": "${workspaceFolder}/.env"
+      }
     },
-
     {
-      // Attach to existing Homebrew debugger session
       "type": "rdbg",
       "name": "Attach to Homebrew Debugger",
       "request": "attach",
-
-      // Debugger executable
       "rdbgPath": "${workspaceFolder}/Library/Homebrew/shims/gems/rdbg",
-
-      // Host and port
       "debugPort": "127.0.0.1:12345",
-
-      // Working directory
       "cwd": "${workspaceFolder}",
-
-      // Environment variables
       "env": {
         "TMPDIR": "/private/tmp"
       },
-
-      // Better diagnostics
       "showDebuggerOutput": true
     }
   ]
